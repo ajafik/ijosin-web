@@ -27,7 +27,8 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite optimize && npm run lint && tsc && vite build --emptyOutDir",
+    "lint": "eslint --ext .ts --ext .tsx . --fix",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
